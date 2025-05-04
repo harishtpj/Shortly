@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    meta name="keywords" description="Slime"
+    title = @site_title
+    javascript:
+      alert('Slime supports embedded javascript!');
+  body
+    / inner_content
+    br
+    p Thank you

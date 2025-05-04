@@ -1,0 +1,4 @@
+#id.class
+  ul
+    = Enum.map @lst, fn x ->
+      li = x

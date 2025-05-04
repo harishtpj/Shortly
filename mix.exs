@@ -22,7 +22,8 @@ defmodule Shortly.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:bandit, "~> 1.0"}
+      {:bandit, "~> 1.0"},
+      {:slime, "~> 1.3"}
     ]
   end
 end
