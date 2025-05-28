@@ -1,0 +1,98 @@
+<!-- Hero Section -->
+<section class="py-20 px-4">
+  <div class="max-w-4xl mx-auto text-center animate-slide-up">
+    <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+      Shorten Your
+      <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        URLs
+      </span>
+    </h2>
+    <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+      Transform long, complex URLs into short, shareable links. Fast, reliable, and completely free.
+    </p>
+    <!-- URL Shortener Form -->
+    <div class="max-w-2xl mx-auto">
+      <div class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200/50 p-8 hover:shadow-2xl transition-all duration-300">
+        <%= render 'form', url: @url %>
+        <!-- Result Display (shown after successful form submission) -->
+        <% if @shortened_url %>
+          <div id="result-section" class="mt-8 p-6 bg-green-50 border border-green-200 rounded-xl">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="flex-shrink-0">
+                  <svg class="h-6 w-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-medium text-green-800">Your shortened URL:</p>
+                  <p class="text-lg font-mono text-green-700" id="shortened-url"><%= request.base_url %>/<%= @shortened_url.short_code %></p>
+                </div>
+              </div>
+              <button class="copy-btn bg-green-100 hover:bg-green-200 text-green-800 px-4 py-2 rounded-lg transition-colors duration-200">
+                Copy
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Features Section -->
+<section class="py-16 px-4 bg-white/50">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-bold text-gray-900 mb-4">Why Choose LinkShort?</h3>
+      <p class="text-lg text-gray-600">Powerful features for all your URL shortening needs</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <h4 class="text-xl font-semibold text-gray-900 mb-2">Lightning Fast</h4>
+        <p class="text-gray-600">Generate short URLs instantly with our optimized servers</p>
+      </div>
+      <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h4 class="text-xl font-semibold text-gray-900 mb-2">Reliable</h4>
+        <p class="text-gray-600">99.9% uptime guaranteed with enterprise-grade infrastructure</p>
+      </div>
+      <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+          </svg>
+        </div>
+        <h4 class="text-xl font-semibold text-gray-900 mb-2">Secure</h4>
+        <p class="text-gray-600">Advanced security measures to protect your links and data</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  // Copy functionality
+  document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('copy-btn')) {
+          const urlText = document.getElementById('shortened-url').textContent;
+          navigator.clipboard.writeText(urlText).then(() => {
+              const btn = e.target;
+              const originalText = btn.textContent;
+              btn.textContent = 'Copied!';
+              btn.classList.add('bg-green-200');
+
+              setTimeout(() => {
+                  btn.textContent = originalText;
+                  btn.classList.remove('bg-green-200');
+              }, 2000);
+          });
+      }
+  });
+</script>

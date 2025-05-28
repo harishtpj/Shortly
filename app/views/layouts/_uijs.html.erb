@@ -1,0 +1,32 @@
+<script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.querySelector('.mobile-menu-button');
+      const mobileMenu = document.querySelector('.mobile-menu');
+
+      if (mobileMenuButton && mobileMenu) {
+          mobileMenuButton.addEventListener('click', () => {
+              mobileMenu.classList.toggle('hidden');
+          });
+      }
+
+      // Smooth animations on scroll
+      const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add('animate-fade-in');
+              }
+          });
+      }, observerOptions);
+
+      // Observe elements for animation
+      document.querySelectorAll('section').forEach(section => {
+          observer.observe(section);
+      });
+  });
+</script>

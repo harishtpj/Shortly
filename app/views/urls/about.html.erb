@@ -1,0 +1,79 @@
+<section class="py-20 px-4">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-16 animate-slide-up">
+      <h2 class="text-5xl font-bold text-gray-900 mb-6">About Shortly</h2>
+      <p class="text-xl text-gray-600">Making the web more accessible, one link at a time</p>
+    </div>
+    <div class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200/50 p-8 mb-12">
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+        <p class="text-gray-700 mb-6">
+          Shortly was created with a simple goal: to make sharing links easier and more efficient. 
+          In today's digital world, URLs can be incredibly long and unwieldy, making them difficult 
+          to share in social media, emails, or print materials.
+        </p>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">What We Do</h3>
+        <p class="text-gray-700 mb-6">
+          We provide a fast, reliable URL shortening service that transforms your long URLs into 
+          short, memorable links. Our service is designed to be simple yet powerful, offering 
+          features like custom aliases, click tracking, and detailed analytics.
+        </p>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Why Trust Us?</h3>
+        <div class="grid md:grid-cols-2 gap-6 mt-6">
+          <div class="flex items-start space-x-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-1">
+              <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Privacy First</h4>
+              <p class="text-gray-600 text-sm">We respect your privacy and never sell your data</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-1">
+              <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Always Free</h4>
+              <p class="text-gray-600 text-sm">Core features remain free for everyone</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mt-1">
+              <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Open Source</h4>
+              <p class="text-gray-600 text-sm">Built with transparency and community in mind</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mt-1">
+              <svg class="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Global CDN</h4>
+              <p class="text-gray-600 text-sm">Fast redirects from anywhere in the world</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <%= link_to root_path, class: "inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 transform hover:scale-105" do %>
+        Try Shortly Now
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      <% end %>
+    </div>
+  </div>
+</section>
