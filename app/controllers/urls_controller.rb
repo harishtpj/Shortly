@@ -8,6 +8,7 @@ class UrlsController < ApplicationController
 
   def create
     @url = Url.new(url_params)
+    Url.create!(url: request.base_url + '/about') if (Url.last.id.succ == Base62.decode('about'))
     if @url.save
       flash[:success] = "URL shortened successfully!"
       flash[:shortened_url] = Base62.encode(@url.id)
