@@ -1,24 +1,38 @@
-# README
+# Shortly
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Shortly** is a simple URL shortener built with Ruby on Rails. It allows users to create short URLs and automatically redirects to the original URL when visited.
 
-Things you may want to cover:
+# Features
+- Create short links for any valid URL
+- Redirect using short codes
+- Neat and clean UI
 
-* Ruby version
+# Requirements
+- Ruby 3.4+
+- Ruby on Rails 8.0+
+- PostgreSQL
 
-* System dependencies
+# Installation
 
-* Configuration
+1. Clone the repository
 
-* Database creation
+```bash
+git clone https://github.com/harishtpj/shortly.git
+```
 
-* Database initialization
+2. Install dependencies
 
-* How to run the test suite
+```bash
+bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+3. Start the server
 
-* Deployment instructions
+```bash
+rails server
+```
 
-* ...
+4. Access the application at http://localhost:3000
+
+# Author
+This application was created by [M.V.Harish Kumar](https://github.com/harishtpj).
